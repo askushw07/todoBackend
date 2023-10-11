@@ -4,13 +4,13 @@ const connection = require("./config/db.js")
 const userRouter = require("./routes/user.route.js")
 const todosRouter = require("./routes/todos.route.js");
 require('dotenv').config()
-const cros = require("cros");
+const cors = require("cors");
 
 const port = process.env.PORT||3000;
 
 const app = express();
 app.use(express.json());
-app.use(cros);
+app.use(cors());
 app.use("/user", userRouter);
 app.use("/todos", todosRouter);
 
