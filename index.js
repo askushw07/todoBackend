@@ -14,6 +14,9 @@ app.use(cors());
 app.use("/user", userRouter);
 app.use("/todos", todosRouter);
 
+app.get("/", (req, res) => {
+    res.send("Home Page")
+})
 
 app.listen(port, async() => {
     console.log("Server is live");
